@@ -19,7 +19,7 @@ jobs:
     # 打包镜像推送到腾讯云容器镜像服务
     - name: Build the Docker image
       run: |
-        docker login --username=${{ secrets.DOCKER_USERNAME }} ccr.ccs.tencentyun.com --password=${{ secrets.DOCKER_PASSWORD }}
+        docker login --username=${{ secrets.DOCKER_USERNAME }} hkccr.ccs.tencentyun.com --password=${{ secrets.DOCKER_PASSWORD }}
         docker build -t xiaorunshu-site:latest .
         docker tag xiaorunshu-site hkccr.ccs.tencentyun.com/xiaorunshu/xiaorunshu-site:latest
         docker push hkccr.ccs.tencentyun.com/xiaorunshu/xiaorunshu-site:latest
