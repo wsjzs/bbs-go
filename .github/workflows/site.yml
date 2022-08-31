@@ -1,7 +1,8 @@
 name: site # Actions名称
 on:
   # 触发workflow的动作形式，这里是手动触发
-  workflow_dispatch:
+  # workflow_dispatch:
+  [push]
 jobs:
   build:
     runs-on: ubuntu-latest
