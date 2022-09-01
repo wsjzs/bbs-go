@@ -1,0 +1,26 @@
+name: ssh-test # Actions名称
+on:
+  # 触发workflow的动作形式，这里是手动触发
+  workflow_dispatch:
+  # [push]
+  # push:
+  #   branches:
+  #     - master
+  #   # 修改文件范围, 不在范围内不触发
+  #   paths:
+  #     - '.github/workflows/**'
+  #     - '__test__/**'
+  #     - 'site/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # 使用appleboy/ssh-action@master登录服务器执行拉取镜像脚本，服务器ip、用户名、密码配置方式同容器镜像服务配置方式一样
+    - name: ssh docker login
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        script: cd ~/xiaorunshu && sh site.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
