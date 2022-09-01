@@ -1,4 +1,4 @@
-name: site # Actions名称
+name: admin # Actions名称
 on:
   # 触发workflow的动作形式，这里是手动触发
   workflow_dispatch:
