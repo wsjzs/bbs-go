@@ -87,7 +87,7 @@ export default {
   },
 
   proxy: {
-    '/api/': 'https://xiaorunshu.com', // host.docker.internal为宿主主机地址
+    '/api/': 'http://api.xiaorunshu.com', // host.docker.internal为宿主主机地址
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
