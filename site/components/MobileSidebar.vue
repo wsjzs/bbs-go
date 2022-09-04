@@ -35,6 +35,7 @@
                 >编辑资料</nuxt-link
               >
             </div>
+            <div class="sidebar-menu-item" @click="signout">退出</div>
           </div>
         </template>
         <template v-else>
